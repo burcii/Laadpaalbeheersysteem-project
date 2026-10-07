@@ -1,0 +1,100 @@
+:root {
+    --main-color: #008062;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: var(--main-color);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* duwt logout button naar onder */
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.user-profile {
+    /* padding: 20px 20px 10px 20px; */
+    color: white;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px; */
+}
+
+.welcome-text {
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.user-name {
+    font-size: 1.1em;
+    display: block;
+}
+
+.user-role-badge {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.nav-links {
+    flex-grow: 1;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #00a17b48;
+    color: #fff;
+}
+
+/* Log out button */
+.logout-btn {
+    background-color: #cf1e1e;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: block;
+}
+
+.logout-btn:hover {
+    background-color: #da4343 !important;
+}

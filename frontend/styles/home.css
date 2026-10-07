@@ -1,0 +1,139 @@
+/* Main content */
+.main {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.main h1 {
+    margin-bottom: 20px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+tbody>tr:hover {
+    background-color: #e2e8f0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+}
+
+.modal-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-confirm {
+    background: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #ccc;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Actieknoppen boven de tabel */
+.actions {
+    display: flex;
+    justify-content: center;   /* Centreert horizontaal */
+    align-items: center;
+    gap: 1rem;                 /* Ruimte tussen knoppen */
+    margin-top: 20px;          /* Ruimte boven de knoppen */
+    margin-bottom: 25px;       /* Ruimte onder de knoppen (naar de tabel toe) */
+}
+
+/* Knopstijl consistent houden */
+.actions button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Groen voor AAN */
+.actions button:first-child {
+    background-color: #01685F;
+}
+.actions button:first-child:hover {
+    background-color: #28a745;
+}
+
+/* Rood voor UIT */
+.actions button:last-child {
+    background-color: #69010A;
+}
+.actions button:last-child:hover {
+    background-color: #c82333;
+}
+
+/* Actions column */
+.actions-cell {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--main-color);
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    transition: opacity 0.2s ease;
+}
+
+.action-btn:hover {
+    opacity: 0.7;
+}

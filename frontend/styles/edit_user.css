@@ -1,0 +1,87 @@
+/* Main content */
+.main {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main h1 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Form */
+form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 25px 30px 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Input */
+form input {
+    width: 100%;
+    padding: 8px 7px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f9fafb;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+form input:focus {
+    border-color: var(--main-color);
+    background: #fff;
+    outline: none;
+}
+
+/* Form label */
+form label {
+    font-weight: 600;
+    display: block;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    width: 150px;
+    font-weight: 600;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+/* Update button */
+#update_info {
+    width: 100%;
+    padding: 12px 24px;
+    background-color: #01685F;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#update_info:hover {
+    background-color: #28a745;
+}
+
+#update_info:active {
+    transform: scale(0.98);
+}

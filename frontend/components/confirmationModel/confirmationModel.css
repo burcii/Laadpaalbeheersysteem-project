@@ -1,0 +1,75 @@
+.confirmation-model-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+.confirmation-model-box {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  animation: confirmationFadeIn 0.25s ease-in-out;
+}
+
+.confirmation-model-message {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+
+.confirmation-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.confirmation-btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  flex: 1;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Confirm Button */
+.confirm-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.confirm-btn:hover {
+  background-color: #c82333;
+}
+
+@keyframes confirmationFadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

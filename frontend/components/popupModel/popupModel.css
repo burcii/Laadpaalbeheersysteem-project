@@ -1,0 +1,53 @@
+.popup-model-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+.popup-model-box {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  animation: popupModelFadeIn 0.25s ease-in-out;
+}
+
+.popup-model-message {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+
+.popup-model-close {
+  background-color: #4b9ce2;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.popup-model-close:hover {
+  background-color: #3a8ad1;
+}
+
+@keyframes popupModelFadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
