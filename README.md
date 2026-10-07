@@ -1,141 +1,41 @@
 # Laadpaal Management Systeem
 
-> Dit is een schoolproject en een groepsproject.
+> Schoolproject in groepsverband.
 
-Dit project is ontwikkeld in een groep als schoolopdracht voor het Laadpaal Management Systeem. Het bevat een eenvoudige backend (Python + MySQL) en frontend (PHP/CSS/JS) voor het beheer van laadpalen.
----
-## Vereisten, zorg dat je deze geinstalleerd hebt:
+Dit project is een webapplicatie voor het beheren van laadpalen. De applicatie bestaat uit een Python backend en een PHP frontend, met een MySQL-database.
+
+## Vereisten
 - Python 3.12+
 - Docker Desktop
-- Browser (Chrome, Firefox, etc.)
-## Setup
-### 0. Startup
-Zorg dat Docker op de achtergrond draait
-### 1. Backend
-1. Start de database met Docker Compose:
+- Browser
 
+## Starten
+### 1. Start de database
 ```bash
 docker compose up -d
-````
+```
 
-2. Installeer Python dependencies:
-
+### 2. Installeer backend-afhankelijkheden
 ```bash
 cd backend
 python -m pip install --user -r requirements.txt
 ```
 
-3. Maak een bestand in backend/config genaamd config.py
+### 3. Maak de configuratie aan
+Maak in `backend/config/` een bestand `config.py` en kopieer de inhoud van `config.py.example` naar dit bestand. Vul daarna de juiste waarden in.
 
-4. Kopieer de inhoud van config.py.example naar config.py en vul de velden in.
-
-5. Start de backend server:
-
+### 4. Start de backend
 ```bash
+cd backend
 python server.py
 ```
 
-De backend draait nu op: [http://localhost:8000](http://localhost:8000)
+De backend draait dan op: http://localhost:8000
 
----
-
-## Unit tests
-
-De backend bevat nu geautomatiseerde unit tests voor de authenticatieflow.
-
-Om de tests uit te voeren, open je een terminal in de `backend/` map en run je:
-
-```bash
-cd backend
-python -m pytest -vv
+### 5. Open de frontend
+Open in je browser:
+```text
+http://localhost
 ```
 
-Wat er op dit moment getest wordt:
-
-- `backend/tests/test_register_service.py`
-  - validatie van registratiegegevens
-  - fout bij bestaand e-mailadres
-  - succesvolle registratie
-- `backend/tests/test_login_service.py`
-  - fout wanneer e-mail of wachtwoord ontbreekt
-  - fout bij ongeldige credentials
-  - succesvolle login en JWT-token generatie
-
----
-
-### 2. Frontend
-1. Open [http://localhost](http://localhost) in je browser.
-2. De backend serveert automatisch de frontend.
-3. De frontend haalt automatisch de messages op van de backend en toont deze.
-4. Als alles correct werkt zie je de login pagina.
-
----
-
-## Veelvoorkomende issues
-
-* **CORS fouten** → start backend via `server.py` en frontend vanaf hetzelfde domein of via `localhost`.
-* **Python kan niet gevonden worden op windows** → check of python in je path staat. Zoek in windows naar environment variables. 
-Deze staan in de system properties op de advanced settings tab rechts onder. Voeg `C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python313` 
-en `C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python313\Scripts`
-toe als ze nog niet in je path staan. Herstart de terminal. Als dit het probleem nog niet oplost kun je in windows zoeken naar manage app aliases. 
-zet op deze pagina alles met python in de naam uit. Herstart de terminal.Als dit het probleem nog steeds niet oplost kun je navigeren naar `C:\Users\%USERNAME%\AppData\Local\Microsoft\WindowsApps` 
-en verwijder alles gerelateerd aan python. Herstart de terminal.
-
----
-
-## Opzetten van een Virtuele Omgeving (Aanbevolen voor Mac en Linux gebruikers)
-
-Om afhankelijkheden gescheiden te houden en te voorkomen dat de systeem-Python beschadigd raakt, gebruik je het beste een virtuele omgeving.
-
-```bash
-# Maak een virtuele omgeving in de projectmap
-python3 -m venv venv
-
-# Activeer de virtuele omgeving
-source venv/bin/activate
-
-# Installeer de vereiste pakketten
-pip install -r requirements.txt
-
-# Elke keer dat je terugkomt naar het project, activeer je de omgeving opnieuw met:
-source venv/bin/activate
-```
----
-
-## Database updaten
-
-Wanneer er wijzigingen zijn in de database-structuur (bijvoorbeeld nieuwe tabellen, kolommen of constraints), moet je de databasecontainers opnieuw opbouwen. Hieronder vind je de stappen:
-
-### 1. Stop de database containers
-
-Stop de draaiende containers. Als je -v gebruikt wordt de database volume ook meten verwijderd.
-Let wel op dat dit al de data in de database verwijderd.
-
-```bash
-docker compose down -v
-```
-
-### 2. Start en rebuild de containers
-
-Start de containers opnieuw op. Door een herstart via up -d worden de nieuwste wijzigingen toegepast.
-
-```bash
-docker compose up -d
-```
-* ```-d``` → draait de containers in de achtergrond.
-
-### 3. Verwijderd de ongebruikte volumes
-
-Na een update kunnen oude volumes achterblijven die niet meer gebruikt worden. Deze kun je verwijderen om schijfruimte vrij te maken:
-
-```bash
-docker volume prune
-```
-
-Je krijgt een bevestigingsvraag:
-
-```bash
-Are you sure you want to continue? [y/N] y
-```
-
-Typ ```y``` om door te gaan. **Let op**: hiermee worden alle ongebruikte volumes verwijderd, dus ook die van andere projecten.
+Als alles goed werkt, verschijnt de inlogpagina van het project.
